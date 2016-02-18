@@ -1,0 +1,86 @@
+html{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.wrapper {
+	width: 80%;
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 0;
+	overflow: auto;
+}
+
+
+.generated_password {
+    background-color: #3cf;
+    padding: 1em 2em;
+}
+
+.error_message {
+    background-color: orange;
+    padding: 1em;
+    width: 70%;
+    margin: 1em auto;
+}
+
+.button-submit {
+    text-align: center;
+    display: inline-block;
+    padding: 10px 40px;
+    font-size: 1em;
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    border: none;
+    background-color: #093;
+    margin: 0.5em;
+}
+.button-submit:hover {
+    background-color: #082;
+}
+
+.button-reset {
+    text-align: center;
+    display: inline-block;
+    padding: 8px 15px;
+    font-size: 0.8em;
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+    color: #000;
+    border: none;
+    background-color: #ddd;
+    margin: 0.5em;
+}
+.button-reset:hover {
+    background-color: #ccc;
+}
+
+fieldset {
+    margin: auto;
+    width: 300px;
+    text-align: left;
+}
+
+label {
+    margin: 0.5em;
+    padding: 0.5em;
+    line-height: 1.8em;
+}
+
+label:hover {
+    text-decoration: underline;
+}
+
+.dropdown {
+    padding: 0.3em;
+    margin: 0.2em;
+}

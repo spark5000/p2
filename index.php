@@ -12,7 +12,6 @@
         <h3 class="generated_password"><?php echo $generatedPassword ?></h3>
 
         <form action="index.php" method="GET">
-            <p>
                 Number of Words
                 <select class="dropdown" name="passwordLength">
                     <?php if (isset($_GET["passwordLength"]) && $_GET["passwordLength"] >= 1 && $_GET["passwordLength"] <= 9)
@@ -70,7 +69,6 @@
                             <option value="9">9</option>
                     <?php }
                     ?>
-
                 </select>
                 <br>
 
@@ -106,27 +104,47 @@
                 <br>
                 <br>
 
-                Combine words with: <br>
-                <input type="radio" name="combine_with" id="hyphens" value="hyphens" checked><label for="hyphens">Hyphens</label><br>
-                <input type="radio" name="combine_with" id="spaces" value="spaces"><label for="spaces">Spaces</label><br>
-                <input type="radio" name="combine_with" id="no_spaces" value="no_spaces"><label for="no_spaces">No Spaces</label><br>
+                <fieldset>
+                    <legend>Combine words with: </legend>
+                    <?php if (isset($_GET["combine_with"]) && ($_GET["combine_with"] =="hyphens" || $_GET["combine_with"] == "spaces" || $_GET["combine_with"] == "no_spaces"))
+                    { ?>
+                        <label><input type="radio" name="combine_with" value="hyphens" <?php if ($_GET["combine_with"] == "hyphens") {echo "checked";} ?> >Hyphens</label><br>
+                        <label><input type="radio" name="combine_with" value="spaces" <?php if ($_GET["combine_with"] == "spaces") {echo "checked";} ?> >Spaces</label><br>
+                        <label><input type="radio" name="combine_with" value="no_spaces" <?php if ($_GET["combine_with"] == "no_spaces") {echo "checked";} ?> >No Spaces</label><br>
+                    <?php
+                    } else { ?>
+                        <label><input type="radio" name="combine_with" value="hyphens" checked>Hyphens</label><br>
+                        <label><input type="radio" name="combine_with" value="spaces">Spaces</label><br>
+                        <label><input type="radio" name="combine_with" value="no_spaces">No Spaces</label><br>
+                    <?php }
+                    ?>
+                </fieldset>
                 <br>
 
-                Upper/Lower case: <br>
-                <input type="radio" name="upper_lower" value="all_lower" checked>all lower case<br>
-                <input type="radio" name="upper_lower" value="all_upper">ALL UPPER CASE<br>
-                <input type="radio" name="upper_lower" value="capital_first_word">Capital First Word<br>
+                <fieldset>
+                    <legend>Upper/Lower case: </legend>
 
-
-
-
-            </p>
-            <input class = "button" type="submit" value="click to generate">
+                    <?php if (isset($_GET["upper_lower"]) && ($_GET["upper_lower"] =="all_lower" || $_GET["upper_lower"] == "all_upper" || $_GET["upper_lower"] == "capital_first_character"))
+                    { ?>
+                        <label><input type="radio" name="upper_lower" value="all_lower" <?php if ($_GET["upper_lower"] == "all_lower") {echo "checked";} ?> >all lower case</label><br>
+                        <label><input type="radio" name="upper_lower" value="all_upper" <?php if ($_GET["upper_lower"] == "all_upper") {echo "checked";} ?> >ALL UPPER CASE</label><br>
+                        <label><input type="radio" name="upper_lower" value="capital_first_character" <?php if ($_GET["upper_lower"] == "capital_first_character") {echo "checked";} ?> >Capitalize First Character</label><br>
+                    <?php
+                    } else { ?>
+                        <label><input type="radio" name="upper_lower" value="all_lower" checked>all lower case</label><br>
+                        <label><input type="radio" name="upper_lower" value="all_upper">ALL UPPER CASE</label><br>
+                        <label><input type="radio" name="upper_lower" value="capital_first_character">Capitalize First Character</label><br>
+                    <?php }
+                    ?>
+                </fieldset>
+                <br>
+            <input class = "button-submit" type="submit" value="Click to generate">
+        </form>
+        <form action="index.php">
+            <input class="button-reset" type="submit" value="Reset to default values">
         </form>
 
-
         <!-- if error message is not empty, something went wrong, display. -->
-
         <?php if ($errorMessage != "") { ?>
             <p class="error_message">
             <?php echo $errorMessage; ?>
