@@ -15,7 +15,7 @@
             $combineWith = "-";
         } else {
             # invalid combine_with was received, write to error message.
-            $errorMessage = $errorMessage."Invalid combine with character was received. Using default (hyphen). ";
+            $errorMessage = $errorMessage."Invalid combine with character was received. Using default (hyphen). <br>";
         }
     }
 
@@ -30,7 +30,7 @@
             $upperLower = "capital_first_character";
         } else {
             # invalid upper_lower was received, write to error message.
-            $errorMessage = $errorMessage."Invalid upper/lower was received. Using default (all lowercase). ";
+            $errorMessage = $errorMessage."Invalid upper/lower was received. Using default (all lowercase). <br>";
         }
     }
 
@@ -48,7 +48,7 @@
         } else {
             # test failed, the input turned out to be invalid, write to error message.
             #echo "invalid number!";
-            $errorMessage = $errorMessage."Invalid number of words received. Showing default 4 words password. ";
+            $errorMessage = $errorMessage."Invalid number of words received. Showing default 4 words password. <br>";
         }
     }
 
@@ -72,7 +72,7 @@
         } else {
             # test failed, the input turned out to be invalid, write to error message.
             #echo "invalid number of numbers! err 3817";
-            $errorMessage = $errorMessage."Invalid number of numbers received. Showing default no numbers. ";
+            $errorMessage = $errorMessage."Invalid number of numbers received. Showing default no numbers. <br>";
         }
     }
 
@@ -89,7 +89,7 @@
         } else {
             # test failed, the input turned out to be invalid, write to error message.
             #echo "invalid number of numbers! err 2917";
-            $errorMessage = $errorMessage."Invalid number of symbols received. Showing default no symbols. ";
+            $errorMessage = $errorMessage."Invalid number of symbols received. Showing default no symbols. <br>";
         }
     }
 

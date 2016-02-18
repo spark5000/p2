@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>P2</title>
+    <title>Samuel Park - P2 xkcd Password Generator</title>
     <link href="css/style.css" rel="stylesheet">
     <?php require 'logic.php'; ?>
 </head>
